@@ -8,41 +8,21 @@
 <body>
     <center>
         <h1>display_AccessRecord</h1>
-
         <table border="2px">
             <tr>
                 <th>pk</th>
-                <th>date</th>
-                <th>author</th>
-                <th>email</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Author</th>
             </tr>
-
-
-            {% for AC in QSAC %}
-                <tr>
-                    <td>{{AC.pk}}</td>
-                    <td>{{AC.topic_name}}</td>
-                    <td>{{AC.name}}</td>
-                    <td>{{AC.url}}</td>
-                    
-                    
-                </tr>
-
+            {% for ao in QSAO %}
+            <tr>
+                <td>{{ao.pk}}</td>
+                <td>{{ao.name}}</td>
+                <td>{{ao.date}}</td>
+                <td>{{ao.author}}</td>
+            </tr>
             {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </table>
     </center>
 </body>

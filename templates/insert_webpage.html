@@ -7,50 +7,24 @@
 </head>
 <body>
     <center>
-        <h1>insert_webpage</h1>
-
+        <h1>insert_webpage details.....</h1>
         <form method="POST">
             {% csrf_token %}
             <label for="tn">Topic_name</label>
             <select name="tn" id="tn">
-
-                {% for to in LTO %}
+                {% for to in WTO %}
 
                     <option value="{{to.topic_name}}">{{to.topic_name}}</option>
-                
+
                 {% endfor %}
+            </select><br><br>
+            <label for="nm">name</label>
+            <input type="text" name="nm" id="nm"> <br><br>
 
-
-            </select> <br><br>
-
-
-
-
-            <label for="na">Name</label>
-            <input type="text" name="na" id="na"> <br> <br>
-
-            <label for="ur">Url</label>
-            <input type="url" name="ur" id="ur"> <br> <br>
-
-
+            <label for="ur">url</label>
+            <input type="url" name="ur" id="ur"> <br><br>
             <input type="submit" value="insert_webpage">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </form>
-
+            
 
     </center>
 </body>

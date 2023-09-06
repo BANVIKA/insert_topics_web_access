@@ -7,22 +7,18 @@
 </head>
 <body>
     <center>
-        <h1>display_webpage</h1>
+        <h1>display_Topic</h1>
         <table border="2px">
             <tr>
-                <th>pk</th>
                 <th>Topic_Name</th>
-                <th>Name</th>
-                <th>Url</th>
             </tr>
-            {% for wo in QSWO %}
-            <tr>
-                <td>{{wo.pk}}</td>
-                <td>{{wo.topic_name}}</td>
-                <td>{{wo.name}}</td>
-                <td>{{wo.url}}</td>
-            </tr>
+            {% for to in QSTO %}
+                <tr>
+                    <td>{{to.topic_name}}</td>
+                </tr>
+
             {% endfor %}
+            
         </table>
     </center>
 </body>
