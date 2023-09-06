@@ -42,3 +42,30 @@ def insert_AccessRecord(request):
         d1={'QSAO':QSAO}
         return render (request,'display_AccessRecord.html',d1)
     return render(request,'insert_AccessRecord.html',d)
+
+
+def select_and_display(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+
+    if request.method=='POST':
+        tnlist=request.POST.getlist('tn')
+        print(tnlist)
+
+        QSWO=Webpage.objects.none()
+
+        for tn in tnlist:
+            QSWO=QSWO|Webpage.objects.filter(topic_name=tn)
+
+        d1={'QSWO':QSWO}
+        return render(request,'display_webpage.html',d1)   
+        
+    return render(request,'select_and_display.html',d)
+
+
+
+def checkbox(request):
+    LTO=Topic.objects.all()
+    d={'LTO':LTO}
+    
+    return render(request,'checkbox.html',d)
